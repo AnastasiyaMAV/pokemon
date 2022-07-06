@@ -1,0 +1,48 @@
+@import './../../assets/styles/main.scss';
+
+.root {
+  border: none;
+  box-shadow: inset 0px -9px 0px rgba(0, 0, 0, 0.18);
+  border-radius: 11px;
+  height: 66px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px 9px;
+  cursor: pointer;
+  outline: 0;
+
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 27px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  &:active {
+    box-shadow: inset 0px -6px 0px rgba(0, 0, 0, 0.18);
+    padding-bottom: 6px;
+  }
+}
+
+.wide {
+  width: 100%;
+}
+
+.small {
+  width: 150px;
+}
+
+.default {
+  width: 200px;
+}
+
+.yellow {
+  background: $primary;
+}
+
+.green {
+  background: $green;
+}
