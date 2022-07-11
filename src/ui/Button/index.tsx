@@ -1,6 +1,5 @@
 import React from 'react';
 import cn from 'classnames';
-
 import s from './Button.module.scss';
 
 interface IBtn {

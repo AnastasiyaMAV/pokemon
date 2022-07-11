@@ -4,7 +4,7 @@ import s from './Parallax.module.scss';
 
 import SmallPokeBallPng from '../../assets/images/SmallPokeBall.png';
 import CloudSmallPng from '../../assets/images/CloudSmall.png';
-import PokeBallPng from '../../assets/images/PokeBall.png';
+import PokeBallPng from '../../assets/images/Pokeball.png';
 import CloudBigPng from '../../assets/images/CloudBig.png';
 import PikachuPng from '../../assets/images/Pikachu.png';
 

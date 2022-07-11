@@ -1,6 +1,8 @@
 import React from 'react';
+import { Outlet, NavLink } from 'react-router-dom';
 import s from './Header.module.scss';
 import { ReactComponent as PokemonLogo } from '../../assets/images/Logo.svg';
+import { LinkEnum } from '../../const/constVariable';
 
 interface IMenu {
   id: number;
@@ -12,41 +14,51 @@ const MENU: IMenu[] = [
   {
     id: 1,
     value: 'Home',
-    link: '#',
+    link: LinkEnum.HOME,
   },
   {
     id: 2,
     value: 'Pokédex',
-    link: '#',
+    link: LinkEnum.POKEDEX,
   },
   {
     id: 3,
     value: 'Legendaries',
-    link: '#',
+    link: LinkEnum.LEGENDARIES,
   },
   {
     id: 4,
     value: 'Documentation',
-    link: '#',
+    link: LinkEnum.DOCUMENTATION,
   },
 ];
 
 const Header = () => {
+  const activeLink = {
+    fontWeight: 'bold',
+  };
+
   return (
     <div className={s.root}>
       <div className={s.wrap}>
-        <div className={s.pokemonLogo}>
-          <PokemonLogo />
-        </div>
-
+        <NavLink to="/">
+          <div className={s.pokemonLogo}>
+            <PokemonLogo />
+          </div>
+        </NavLink>
         <div className={s.menuWrap}>
           {MENU.map(({ value, link, id }) => (
-            <a key={id} href={link} className={s.menuLink}>
+            <NavLink
+              key={id}
+              to={link}
+              className={s.menuLink}
+              style={({ isActive }) => (isActive ? (activeLink as any) : undefined)}>
               {value}
-            </a>
+            </NavLink>
           ))}
         </div>
       </div>
+      <Outlet />
     </div>
   );
 };

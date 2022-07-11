@@ -1,0 +1,26 @@
+@import '../../../assets/styles/main.scss';
+
+.root {
+  min-height: 90vh;
+  background: $danger;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.teamRocketImg {
+  position: absolute;
+  top: 20%;
+}
+
+.text {
+  @include headingNotFound;
+  display: flex;
+  gap: 10px;
+}
+
+.textWhite {
+  color: $white;
+}
