@@ -1,0 +1,10 @@
+@import '../../assets/styles/main.scss';
+
+.select {
+  @include mainText;
+  width: 135px;
+  height: 36px;
+  background: $white;
+  box-shadow: 2px 2px 2px rgba(33, 33, 33, 0.1);
+  border-radius: 4px;
+}

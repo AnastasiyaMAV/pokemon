@@ -30,8 +30,12 @@ const PokemonCard: React.FC<IPokemonCard> = ({ name, attack, defense, types, img
         </div>
         <div className={s.labelWrap}>
           {Array.isArray(types) &&
-            types.map((item) => {
-              return <span className={s.label}>{item}</span>;
+            types.map((item, index) => {
+              return (
+                <span key={item + String(index)} className={s.label}>
+                  {item}
+                </span>
+              );
             })}
         </div>
       </div>

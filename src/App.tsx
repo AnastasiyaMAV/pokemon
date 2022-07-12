@@ -14,7 +14,7 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path="pokedex" element={<Pokedex />} />
         <Route path="legendaries" element={<Empty />} />
-        <Route path="documentation" element={<Home />} />
+        <Route path="documentation" element={<Empty />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
