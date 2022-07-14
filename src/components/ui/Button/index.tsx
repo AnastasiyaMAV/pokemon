@@ -9,9 +9,17 @@ interface IBtn {
   color?: 'green' | 'yellow';
 }
 
-const Button: React.FC<IBtn> = ({ children, onClick, size = 'default', color = 'green' }) => {
+const Button: React.FC<IBtn> = ({
+  children,
+  onClick,
+  size = 'default',
+  color = 'green',
+}) => {
   return (
-    <button type="button" className={cn(s.root, s[color], s[size])} onClick={onClick}>
+    <button
+      type="button"
+      className={cn(s.root, s[color], s[size])}
+      onClick={onClick}>
       {children}
     </button>
   );

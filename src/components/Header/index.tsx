@@ -52,7 +52,9 @@ const Header = () => {
               key={id}
               to={link}
               className={s.menuLink}
-              style={({ isActive }) => (isActive ? (activeLink as any) : undefined)}>
+              style={({ isActive }) =>
+                isActive ? (activeLink as any) : undefined
+              }>
               {value}
             </NavLink>
           ))}

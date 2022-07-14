@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import s from './NotFound.module.scss';
-import Button from '../../../ui/Button';
+import Button from '../../ui/Button';
 import Error404 from '../../../assets/images/404.png';
 import TeamRocket from '../../../assets/images/TeamRocket.png';
 import { LinkEnum } from '../../../const/constVariable';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Button from '../../../ui/Button';
-import Heading from '../../../ui/Heading';
+import Button from '../../ui/Button';
+import Heading from '../../ui/Heading';
 import Layout from '../../Layout';
 import Parallax from '../../Parallax';
 import s from './Home.module.scss';
@@ -19,7 +19,10 @@ const Home = () => {
       <Layout className={s.contentWrap}>
         <div className={s.contentText}>
           <Heading type="h1">Find all your favorite Pokemon</Heading>
-          <Heading type="h3">You can know the type of Pokemon, its strengths, disadvantages and abilities</Heading>
+          <Heading type="h3">
+            You can know the type of Pokemon, its strengths, disadvantages and
+            abilities
+          </Heading>
           <Button onClick={handlerTransition}>See pokemons</Button>
         </div>
 

@@ -1,7 +1,8 @@
 import React from 'react';
+import cn from 'classnames';
 import Heading from '../Heading';
-
 import s from './PokemonCard.module.scss';
+import PokeBallPng from '../../../assets/images/Pokeball.png';
 
 interface IPokemonCard {
   name: string;
@@ -9,9 +10,17 @@ interface IPokemonCard {
   defense: number;
   types?: string[];
   img: string;
+  cardColor: string;
 }
 
-const PokemonCard: React.FC<IPokemonCard> = ({ name, attack, defense, types, img }) => {
+const PokemonCard: React.FC<IPokemonCard> = ({
+  name,
+  attack,
+  defense,
+  types,
+  img,
+  cardColor,
+}) => {
   return (
     <div className={s.root}>
       <div className={s.infoWrap}>
@@ -28,19 +37,23 @@ const PokemonCard: React.FC<IPokemonCard> = ({ name, attack, defense, types, img
             Defense
           </div>
         </div>
+
         <div className={s.labelWrap}>
           {Array.isArray(types) &&
             types.map((item, index) => {
               return (
-                <span key={item + String(index)} className={s.label}>
+                <span
+                  key={item + String(index)}
+                  className={cn(s.label, s[`colorWrap_${item}`])}>
                   {item}
                 </span>
               );
             })}
         </div>
       </div>
-      <div className={s.pictureWrap}>
-        <img src={img} alt={name} />
+
+      <div className={cn(s.pictureWrap, s[`colorWrap_${cardColor}`])}>
+        <img src={img || PokeBallPng} alt={name} />
       </div>
     </div>
   );

@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
+import { ENDPOINT_ENUM } from '../types/dataEnum';
 import { IData } from '../types/dataInterface';
+import request from '../utils/request';
 
-const usePokemons = () => {
+const useData = (endpoint: ENDPOINT_ENUM, query: object, deps: any[] = []) => {
   const [data, setData] = useState<IData | undefined>(undefined);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
@@ -10,8 +12,7 @@ const usePokemons = () => {
     (async () => {
       setIsLoading(true);
       try {
-        const response = await fetch('http://zar.hosthot.ru/api/v1/pokemons');
-        const result = await response.json();
+        const result = await request(endpoint, query);
 
         setData(result);
       } catch (e) {
@@ -20,11 +21,11 @@ const usePokemons = () => {
         setIsLoading(false);
       }
     })();
-  }, []);
+  }, deps);
   return {
     data,
     isLoading,
     isError,
   };
 };
-export default usePokemons;
+export default useData;

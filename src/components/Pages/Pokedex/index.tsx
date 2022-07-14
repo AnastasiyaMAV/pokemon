@@ -1,13 +1,35 @@
-import React from 'react';
-import Heading from '../../../ui/Heading';
-import PokemonCard from '../../../ui/PokemonCard';
+import React, { useState } from 'react';
+import Heading from '../../ui/Heading';
+import PokemonCard from '../../ui/PokemonCard';
 import Error from '../../Error';
 import Loading from '../../Loading';
 import s from './Pokedex.module.scss';
-import usePokemons from '../../../hooks/usePokemons';
+import useData from '../../../hooks/useData';
+import { ENDPOINT_ENUM } from '../../../types/dataEnum';
+import { IQuery } from '../../../types/dataInterface';
+import useDebounce from '../../../hooks/useDebounce';
 
 const Pokedex = () => {
-  const { data, isLoading, isError } = usePokemons();
+  const [searchValue, setSearchValue] = useState('');
+  const [query, setQuery] = useState<IQuery>({
+    limit: 8,
+  });
+
+  const debouncedValue = useDebounce(searchValue, 1500);
+
+  const { data, isLoading, isError } = useData(
+    ENDPOINT_ENUM.getPokemon,
+    query,
+    [debouncedValue],
+  );
+
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(event.target.value);
+    setQuery((state: IQuery) => ({
+      ...state,
+      name: event.target.value,
+    }));
+  };
 
   if (isLoading) {
     return <Loading />;
@@ -21,7 +43,13 @@ const Pokedex = () => {
       <Heading type="h3" className={s.heading}>
         {data && data.total} Pokemons for you to choose your favorite
       </Heading>
-      <input type="text" className={s.input} placeholder="Encuentra tu pokémon..." />
+      <input
+        type="text"
+        className={s.input}
+        placeholder="Encuentra tu pokémon..."
+        value={searchValue}
+        onChange={handleSearchChange}
+      />
       <div className={s.selects}>
         <select className={s.select} defaultValue="">
           <option value="" disabled hidden>
@@ -50,20 +78,25 @@ const Pokedex = () => {
         </select>
       </div>
 
-      <div className={s.cards}>
-        {data?.pokemons.map((item) => {
-          return (
-            <PokemonCard
-              key={item.id}
-              name={item.name_clean}
-              attack={item.stats.attack}
-              defense={item.stats.defense}
-              types={item.types}
-              img={item.img}
-            />
-          );
-        })}
-      </div>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <div className={s.cards}>
+          {data?.pokemons.map((item) => {
+            return (
+              <PokemonCard
+                key={item.id}
+                name={item.name_clean}
+                attack={item.stats.attack}
+                defense={item.stats.defense}
+                types={item.types}
+                img={item.img}
+                cardColor={item.types[0]}
+              />
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 };

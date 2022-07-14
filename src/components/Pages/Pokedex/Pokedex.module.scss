@@ -19,6 +19,7 @@
   @include mainText;
   height: 53px;
   width: calc(100% - 150px);
+  padding-left: 31px;
   display: flex;
   align-self: center;
   background: $white;
@@ -36,5 +37,5 @@
   display: grid;
   justify-items: center;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 }

@@ -31,3 +31,11 @@ export interface IData {
   count: number;
   pokemons: Ipokemons[];
 }
+
+export interface IQuery {
+  name?: string;
+  limit?: number;
+  total?: number;
+  count?: number;
+  offset?: number;
+}

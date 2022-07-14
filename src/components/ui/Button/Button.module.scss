@@ -1,4 +1,4 @@
-@import './../../assets/styles/main.scss';
+@import './../../../assets/styles/main.scss';
 
 .root {
   @include btnText;
@@ -36,7 +36,7 @@
 }
 
 .yellow {
-  background: $primary;
+  background: $electric2;
 }
 
 .green {
