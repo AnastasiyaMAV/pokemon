@@ -1,4 +1,4 @@
-@import './../../../assets/styles/main.scss';
+@import './../../assets/styles/main.scss';
 
 .root {
   width: 350px;
@@ -29,6 +29,8 @@
 .titleName {
   margin-bottom: 12px;
   text-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
+  text-decoration: none;
+  color: $dark;
 }
 
 .statWrap {
@@ -112,75 +114,5 @@
 }
 
 .colorWrap {
-  &_bug {
-    background: linear-gradient(270deg, $bug1 0.15%, $bug2 100%);
-  }
-
-  &_dark {
-    background: linear-gradient(270deg, $dark1 0.15%, $dark2 100%);
-  }
-
-  &_dragon {
-    background: linear-gradient(270deg, $dragon1 0.15%, $dragon2 100%);
-  }
-
-  &_electric {
-    background: linear-gradient(270deg, $electric1 0.15%, $electric2 100%);
-  }
-
-  &_fairy {
-    background: linear-gradient(270deg, $fairy1 0.15%, $fairy2 100%);
-  }
-
-  &_fighting {
-    background: linear-gradient(270deg, $fighting1 0.15%, $fighting2 100%);
-  }
-
-  &_fire {
-    background: linear-gradient(270deg, $fire1 0.15%, $fire2 100%);
-  }
-
-  &_flying {
-    background: linear-gradient(270deg, $flying1 0.15%, $flying2 100%);
-  }
-
-  &_ghost {
-    background: linear-gradient(270deg, $ghost1 0.15%, $ghost2 100%);
-  }
-
-  &_grass {
-    background: linear-gradient(270deg, $grass1 0.15%, $grass2 100%);
-  }
-
-  &_ground {
-    background: linear-gradient(270deg, $ground1 0.15%, $ground2 100%);
-  }
-
-  &_ice {
-    background: linear-gradient(270deg, $ice1 0.15%, $ice2 100%);
-  }
-
-  &_normal {
-    background: linear-gradient(270deg, $normal1 0.15%, $normal2 100%);
-  }
-
-  &_poison {
-    background: linear-gradient(270deg, $poison1 0.15%, $poison2 100%);
-  }
-
-  &_psychic {
-    background: linear-gradient(270deg, $psychic1 0.15%, $psychic2 100%);
-  }
-
-  &_rock {
-    background: linear-gradient(270deg, $rock1 0.15%, $rock2 100%);
-  }
-
-  &_steel {
-    background: linear-gradient(270deg, $steel1 0.15%, $steel2 100%);
-  }
-
-  &_water {
-    background: linear-gradient(270deg, $water1 0.15%, $water2 100%);
-  }
+  @include componentColorCard;
 }

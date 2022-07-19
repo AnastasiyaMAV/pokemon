@@ -1,11 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Button from '../../ui/Button';
-import Heading from '../../ui/Heading';
-import Layout from '../../Layout';
-import Parallax from '../../Parallax';
+import Button from '../../components/Button';
+import Heading from '../../components/Heading';
+import Layout from '../../components/Layout';
+import Parallax from '../../components/Parallax';
 import s from './Home.module.scss';
-import { LinkEnum } from '../../../const/constVariable';
+import { LinkEnum } from '../../const/constVariable';
 
 const Home = () => {
   const navigate = useNavigate();

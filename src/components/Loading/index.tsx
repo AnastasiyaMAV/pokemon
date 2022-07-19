@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './Loading.module.scss';
-import PokeBallPng from '../../assets/images/Pokeball.png';
+import PokeBallPng from '../../assets/images/PokeBall.png';
 
 const Loading = () => {
   return (

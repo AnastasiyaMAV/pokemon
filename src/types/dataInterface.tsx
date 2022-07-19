@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 export interface IStats {
   hp: number;
   attack: number;
@@ -8,14 +9,12 @@ export interface IStats {
 }
 
 export interface Ipokemons {
-  // eslint-disable-next-line camelcase
   name_clean: string;
   abilities: string[];
   stats: IStats;
   types: string[];
   img: string;
   name: string;
-  // eslint-disable-next-line camelcase
   base_experience: number;
   height: number;
   id: number;

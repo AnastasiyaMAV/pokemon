@@ -3,7 +3,7 @@ import React from 'react';
 import s from './Error.module.scss';
 
 import SmallPokeBallPng from '../../assets/images/SmallPokeBall.png';
-import Heading from '../ui/Heading';
+import Heading from '../Heading';
 
 const Error = () => {
   return (

@@ -8,11 +8,17 @@ interface IConfig {
           pathname: string;
         };
       };
+      getOnePokemon: {
+        method: string;
+        uri: {
+          pathname: string;
+        };
+      };
     };
   };
 }
 
-export const config: IConfig = {
+export const configData: IConfig = {
   client: {
     server: {
       protocol: 'http',
@@ -25,8 +31,14 @@ export const config: IConfig = {
           pathname: '/api/v1/pokemons',
         },
       },
+      getOnePokemon: {
+        method: 'GET',
+        uri: {
+          pathname: '/api/v1/pokemon/',
+        },
+      },
     },
   },
 };
 
-export default config;
+export default configData;

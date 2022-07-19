@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { ENDPOINT_ENUM } from '../types/dataEnum';
-import { IData } from '../types/dataInterface';
+import { Ipokemons } from '../types/dataInterface';
 import request from '../utils/request';
 
-const useData = (endpoint: ENDPOINT_ENUM, query: object, deps: any[] = []) => {
-  const [data, setData] = useState<IData | undefined>(undefined);
+const useOnePokemonData = (endpoint: ENDPOINT_ENUM, id: number) => {
+  const [data, setData] = useState<Ipokemons | undefined>(undefined);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
@@ -12,7 +12,7 @@ const useData = (endpoint: ENDPOINT_ENUM, query: object, deps: any[] = []) => {
     (async () => {
       setIsLoading(true);
       try {
-        const result = await request(endpoint, query);
+        const result = await request(endpoint, undefined, id);
         setData(result);
       } catch (e) {
         setIsError(true);
@@ -20,11 +20,13 @@ const useData = (endpoint: ENDPOINT_ENUM, query: object, deps: any[] = []) => {
         setIsLoading(false);
       }
     })();
-  }, deps);
+  }, [endpoint, id]);
+
   return {
     data,
     isLoading,
     isError,
   };
 };
-export default useData;
+
+export default useOnePokemonData;

@@ -1,0 +1,102 @@
+@import './../../assets/styles/main.scss';
+
+.root {
+  width: 796px;
+  height: 271px;
+  border-radius: 16px;
+  position: absolute;
+  top: calc(100% - 450px);
+  left: calc(100% - 1090px);
+}
+
+.infoWrap {
+  position: absolute;
+  z-index: 1;
+  width: calc(100% - 350px);
+  height: 100%;
+  left: 350px;
+}
+
+.titleName {
+  margin-bottom: 12px;
+  text-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
+  text-align: center;
+}
+
+.statWrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.statItem {
+  @include normalText;
+  width: 87px;
+  border-radius: 8px;
+  padding-top: 5px;
+  text-align: center;
+  color: $gray;
+  background-color: $white;
+}
+
+.statValue {
+  width: 36px;
+  height: 36px;
+  border: 3px solid $dark;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 18px;
+  color: $dark;
+  margin: 0 auto 8px;
+}
+
+.pictureWrap {
+  width: 341px;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 80%;
+  }
+}
+
+.labelWrap {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.abilities {
+  @include normalText;
+  width: 150px;
+  position: absolute;
+  top: 200px;
+  left: 400px;
+  border-radius: 8px;
+  background-color: $white;
+  text-align: center;
+}
+
+.types {
+  @include normalText;
+  width: 150px;
+  position: absolute;
+  top: 200px;
+  left: 580px;
+  border-radius: 8px;
+  background-color: $white;
+  text-align: center;
+}
+
+.colorWrap {
+  @include componentColorCard;
+}

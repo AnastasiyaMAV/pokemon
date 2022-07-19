@@ -1,8 +1,8 @@
 import React from 'react';
 import cn from 'classnames';
 import Heading from '../Heading';
-import s from './PokemonCard.module.scss';
-import PokeBallPng from '../../../assets/images/Pokeball.png';
+import s from './PokemonSmallCard.module.scss';
+import PokeBallPng from '../../assets/images/PokeBall.png';
 
 interface IPokemonCard {
   name: string;
@@ -13,7 +13,7 @@ interface IPokemonCard {
   cardColor: string;
 }
 
-const PokemonCard: React.FC<IPokemonCard> = ({
+const PokemonSmallCard: React.FC<IPokemonCard> = ({
   name,
   attack,
   defense,
@@ -59,4 +59,4 @@ const PokemonCard: React.FC<IPokemonCard> = ({
   );
 };
 
-export default PokemonCard;
+export default PokemonSmallCard;

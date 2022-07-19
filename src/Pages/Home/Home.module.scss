@@ -1,6 +1,11 @@
-@import '../../../assets/styles/main.scss';
+@import '../../assets/styles/main.scss';
 
 .root {
   min-height: 90vh;
   background: linear-gradient(180deg, $third 0%, $electric2 100%);
+}
+
+.contentWrap {
+  display: flex;
+  gap: 50px;
 }
