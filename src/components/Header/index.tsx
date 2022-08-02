@@ -3,6 +3,7 @@ import { Outlet, NavLink } from 'react-router-dom';
 import s from './Header.module.scss';
 import { ReactComponent as PokemonLogo } from '../../assets/images/Logo.svg';
 import { LinkEnum } from '../../const/constVariable';
+import MenuBurger from '../MenuBurger';
 
 interface IMenu {
   id: number;
@@ -39,29 +40,32 @@ const Header = () => {
   };
 
   return (
-    <div className={s.root}>
-      <div className={s.wrap}>
-        <NavLink to="/">
-          <div className={s.pokemonLogo}>
-            <PokemonLogo />
+    <>
+      <MenuBurger />
+      <div className={s.root}>
+        <div className={s.wrap}>
+          <NavLink to="/">
+            <div className={s.pokemonLogo}>
+              <PokemonLogo />
+            </div>
+          </NavLink>
+          <div className={s.menuWrap}>
+            {MENU.map(({ value, link, id }) => (
+              <NavLink
+                key={id}
+                to={link}
+                className={s.menuLink}
+                style={({ isActive }) =>
+                  isActive ? (activeLink as any) : undefined
+                }>
+                {value}
+              </NavLink>
+            ))}
           </div>
-        </NavLink>
-        <div className={s.menuWrap}>
-          {MENU.map(({ value, link, id }) => (
-            <NavLink
-              key={id}
-              to={link}
-              className={s.menuLink}
-              style={({ isActive }) =>
-                isActive ? (activeLink as any) : undefined
-              }>
-              {value}
-            </NavLink>
-          ))}
         </div>
+        <Outlet />
       </div>
-      <Outlet />
-    </div>
+    </>
   );
 };
 

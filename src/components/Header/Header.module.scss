@@ -8,6 +8,9 @@
   align-items: center;
   background: $third;
   box-shadow: 0px 4px 16px rgba(1, 28, 64, 0.2);
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .wrap {
@@ -33,35 +36,5 @@
 }
 
 .menuLink {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 25px;
-  line-height: 29px;
-  color: $dark;
-  text-decoration: none;
-  position: relative;
-
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: -8px;
-    height: 1px;
-    width: 1%;
-    background: $dark;
-    border: 1px solid $dark;
-    border-radius: 6px;
-    opacity: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
-    transition: opacity, width ease-in-out 0.25s;
-  }
-
-  &:hover,
-  &.activeLink {
-    &:after {
-      width: 100%;
-      opacity: 1;
-    }
-  }
+  @include menuLink;
 }

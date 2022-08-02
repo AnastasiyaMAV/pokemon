@@ -8,10 +8,12 @@ import PokemonBigCard from '../PokemonBigCard';
 const PokemonModal = () => {
   const { pokemonId } = useParams();
 
-  const { data } = useOnePokemonData(
-    ENDPOINT_ENUM.getOnePokemon,
-    Number(pokemonId),
-  );
+  const { data } = useOnePokemonData(ENDPOINT_ENUM.getOnePokemon, pokemonId);
+
+  const mas: any[] = [];
+  data?.types.map((item: any) => {
+    return mas.push(item.type.name);
+  });
 
   const navigate = useNavigate();
 
@@ -23,16 +25,14 @@ const PokemonModal = () => {
     <Modal onClose={handleClose}>
       {data && (
         <PokemonBigCard
-          id={data.id}
-          name={data.name_clean}
-          attack={data.stats.attack}
-          defense={data.stats.defense}
-          stAttack={data.stats['special-attack']}
-          stDefense={data.stats['special-defense']}
-          types={data.types}
-          abilities={data.abilities}
-          img={data.img}
-          cardColor={data.types[0]}
+          name={data.name}
+          height={data.height}
+          weight={data.weight}
+          experience={data.base_experience}
+          types={mas}
+          abilities={['rr']}
+          img={data.sprites.other.dream_world.front_default}
+          cardColor={mas[0]}
         />
       )}
     </Modal>

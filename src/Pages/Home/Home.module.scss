@@ -3,9 +3,24 @@
 .root {
   min-height: 90vh;
   background: linear-gradient(180deg, $third 0%, $electric2 100%);
+
+  @media (max-width: 768px) {
+    min-height: 100vh;
+  }
 }
 
 .contentWrap {
   display: flex;
   gap: 50px;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.contentText {
+  @media (max-width: 768px) {
+    margin-top: 25px;
+  }
 }

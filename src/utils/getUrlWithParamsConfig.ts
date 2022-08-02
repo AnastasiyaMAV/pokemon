@@ -4,7 +4,7 @@ import { ENDPOINT_ENUM } from '../types/dataEnum';
 function getUrlWithParamsConfig(
   endpointConfig: ENDPOINT_ENUM,
   query?: object | null,
-  id?: number,
+  id?: string,
 ): any {
   if (query) {
     const url = {

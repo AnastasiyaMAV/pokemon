@@ -11,6 +11,7 @@ interface IPokemonCard {
   types?: string[];
   img: string;
   cardColor: string;
+  index: number;
 }
 
 const PokemonSmallCard: React.FC<IPokemonCard> = ({
@@ -20,6 +21,7 @@ const PokemonSmallCard: React.FC<IPokemonCard> = ({
   types,
   img,
   cardColor,
+  index,
 }) => {
   return (
     <div className={s.root}>
@@ -40,10 +42,10 @@ const PokemonSmallCard: React.FC<IPokemonCard> = ({
 
         <div className={s.labelWrap}>
           {Array.isArray(types) &&
-            types.map((item, index) => {
+            types.map((item, i) => {
               return (
                 <span
-                  key={item + String(index)}
+                  key={item + String(i)}
                   className={cn(s.label, s[`colorWrap_${item}`])}>
                   {item}
                 </span>

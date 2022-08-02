@@ -2,6 +2,10 @@
   width: 793px;
   height: 680px;
   position: relative;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .smallPokeBall {
@@ -32,4 +36,17 @@
   position: absolute;
   top: 0%;
   left: -10%;
+}
+
+.rootMobile {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: contents;
+  }
+}
+
+.pikachuMobile {
+  width: 250px;
+  height: 250px;
 }

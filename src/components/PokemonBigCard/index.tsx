@@ -5,24 +5,21 @@ import s from './PokemonBigCard.module.scss';
 import PokeBallPng from '../../assets/images/PokeBall.png';
 
 interface IPokemonCard {
-  id: number;
   name: string;
-  attack: number;
-  defense: number;
-  stAttack: number;
-  stDefense: number;
+  height: number;
+  weight: number;
+  experience: number;
   abilities?: string[];
-  types?: string[];
+  types: string[] | undefined;
   img: string;
   cardColor: string;
 }
 
 const PokemonBigCard: React.FC<IPokemonCard> = ({
   name,
-  attack,
-  defense,
-  stAttack,
-  stDefense,
+  height,
+  weight,
+  experience,
   abilities,
   types,
   img,
@@ -39,20 +36,16 @@ const PokemonBigCard: React.FC<IPokemonCard> = ({
         </Heading>
         <div className={s.statWrap}>
           <div className={s.statItem}>
-            <div className={s.statValue}>{attack}</div>
-            Attack
+            <div className={s.statValue}>{height}</div>
+            Height
           </div>
           <div className={s.statItem}>
-            <div className={s.statValue}>{defense}</div>
-            Defense
+            <div className={s.statValue}>{weight}</div>
+            Weight
           </div>
           <div className={s.statItem}>
-            <div className={s.statValue}>{stAttack}</div>
-            Special Attack
-          </div>
-          <div className={s.statItem}>
-            <div className={s.statValue}>{stDefense}</div>
-            Special Defense
+            <div className={s.statValue}>{experience}</div>
+            Base experience
           </div>
         </div>
       </div>

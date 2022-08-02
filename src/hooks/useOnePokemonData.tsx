@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { ENDPOINT_ENUM } from '../types/dataEnum';
-import { Ipokemons } from '../types/dataInterface';
+import { IpokemonsOne } from '../types/dataInterface';
 import request from '../utils/request';
 
-const useOnePokemonData = (endpoint: ENDPOINT_ENUM, id: number) => {
-  const [data, setData] = useState<Ipokemons | undefined>(undefined);
+const useOnePokemonData = (endpoint: ENDPOINT_ENUM, id: string | undefined) => {
+  const [data, setData] = useState<IpokemonsOne | undefined>(undefined);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
