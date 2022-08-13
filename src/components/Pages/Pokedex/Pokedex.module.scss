@@ -1,4 +1,4 @@
-@import '../../assets/styles/main.scss';
+@import '../../../assets/styles/main.scss';
 
 .root {
   display: flex;
@@ -19,26 +19,9 @@
   }
 }
 
-.input {
-  @include mainText;
-  height: 53px;
-  width: calc(100% - 150px);
-  padding-left: 31px;
-  display: flex;
-  align-self: center;
-  background: $white;
-  box-shadow: 4px 4px 16px rgba(1, 28, 64, 0.2);
-  border-radius: 40px;
-}
-
-.selects {
-  display: flex;
-  align-self: center;
-  gap: 25px;
-}
-
 .cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  gap: 15px;
 }

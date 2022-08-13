@@ -3,7 +3,7 @@ import { ENDPOINT_ENUM } from '../types/dataEnum';
 import { IData } from '../types/dataInterface';
 import request from '../utils/request';
 
-const useData = (endpoint: ENDPOINT_ENUM, query: object, deps: any[] = []) => {
+const useData = (endpoint: ENDPOINT_ENUM, query: object) => {
   const [data, setData] = useState<IData | undefined>(undefined);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
@@ -20,7 +20,7 @@ const useData = (endpoint: ENDPOINT_ENUM, query: object, deps: any[] = []) => {
         setIsLoading(false);
       }
     })();
-  }, deps);
+  }, [endpoint, query]);
   return {
     data,
     isLoading,

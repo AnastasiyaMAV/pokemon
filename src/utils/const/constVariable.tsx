@@ -3,6 +3,7 @@
 export enum LinkEnum {
   HOME = '/',
   POKEDEX = '/pokedex',
+  SEARCH = '/search',
   LEGENDARIES = '/legendaries',
   DOCUMENTATION = '/documentation',
 }

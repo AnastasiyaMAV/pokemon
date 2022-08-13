@@ -1,0 +1,56 @@
+@import '../../../assets/styles/main.scss';
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.searchInput {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    margin-top: 50px;
+  }
+}
+
+.input {
+  width: calc(100% - 450px);
+}
+
+.styleInput {
+  @include mainText;
+  height: 53px;
+  width: 100%;
+  padding-left: 31px;
+  margin-top: 15px;
+  display: flex;
+  align-self: center;
+  background: $white;
+  box-shadow: 4px 4px 16px rgba(1, 28, 64, 0.2);
+  border-radius: 40px;
+}
+
+.button {
+  margin: 15px 15px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img {
+  width: 350px;
+}
+
+.selects {
+  display: flex;
+  align-self: center;
+  gap: 25px;
+}

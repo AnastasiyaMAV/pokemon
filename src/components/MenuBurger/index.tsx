@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 import cn from 'classnames';
 import s from './MenuBurger.module.scss';
 
-import { LinkEnum } from '../../const/constVariable';
+import { LinkEnum } from '../../utils/const/constVariable';
 
 interface IMenu {
   id: number;
@@ -26,11 +26,16 @@ const MENU: IMenu[] = [
   },
   {
     id: 3,
+    value: 'Pokemon Search',
+    link: LinkEnum.SEARCH,
+  },
+  {
+    id: 4,
     value: 'Legendaries',
     link: LinkEnum.LEGENDARIES,
   },
   {
-    id: 4,
+    id: 5,
     value: 'Documentation',
     link: LinkEnum.DOCUMENTATION,
   },

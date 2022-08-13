@@ -1,10 +1,10 @@
-import configData from '../config/configData';
+import configData from './config/configData';
 import { ENDPOINT_ENUM } from '../types/dataEnum';
 
 function getUrlWithParamsConfig(
   endpointConfig: ENDPOINT_ENUM,
   query?: object | null,
-  id?: string,
+  idName?: string | null,
 ): any {
   if (query) {
     const url = {
@@ -16,10 +16,10 @@ function getUrlWithParamsConfig(
     };
     return url;
   }
-  if (id) {
+  if (idName) {
     const url = {
       ...configData.client.server,
-      pathname: `${configData.client.endpoint[endpointConfig].uri.pathname}${id}`,
+      pathname: `${configData.client.endpoint[endpointConfig].uri.pathname}${idName}`,
 
       /*
         protocol: 'http',

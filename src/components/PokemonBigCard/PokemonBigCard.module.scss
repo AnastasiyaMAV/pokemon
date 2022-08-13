@@ -1,12 +1,75 @@
 @import './../../assets/styles/main.scss';
 
+@mixin massAbilitiesAndTypes {
+  @include normalText;
+  width: 175px;
+  position: absolute;
+  top: 200px;
+  border-radius: 8px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: $white;
+  text-align: center;
+}
+
 .root {
   width: 796px;
-  height: 271px;
+  height: 320px;
   border-radius: 16px;
   position: absolute;
   top: calc(100% - 450px);
-  left: calc(100% - 1090px);
+  left: calc(100% - 1190px);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: 1250px) {
+    display: none;
+  }
+}
+
+.rootMobile {
+  @media screen and (min-width: 1250px) {
+    display: none;
+  }
+
+  @media (max-width: 1251px) {
+    width: 100%;
+    height: calc(100% - 450px);
+    border-radius: 16px;
+    position: absolute;
+    top: calc(100% - 550px);
+  }
+}
+
+.pictureWrap {
+  width: 341px;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 80%;
+  }
+}
+
+.pictureWrapMobile {
+  width: 151px;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 80%;
+  }
+}
+
+.colorWrap {
+  @include componentColorCard;
 }
 
 .infoWrap {
@@ -15,6 +78,14 @@
   width: calc(100% - 350px);
   height: 100%;
   left: 350px;
+}
+
+.infoWrapMobile {
+  position: absolute;
+  z-index: 1;
+  width: calc(100% - 160px);
+  height: 100%;
+  left: 150px;
 }
 
 .titleName {
@@ -31,9 +102,10 @@
 
 .statItem {
   @include normalText;
-  width: 87px;
+  width: 95px;
   border-radius: 8px;
   padding-top: 5px;
+  padding: 5px;
   text-align: center;
   color: $gray;
   background-color: $white;
@@ -56,47 +128,28 @@
   margin: 0 auto 8px;
 }
 
-.pictureWrap {
-  width: 341px;
-  height: 100%;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.abilities {
+  @include massAbilitiesAndTypes;
+  left: 400px;
+}
 
-  img {
-    width: 80%;
+.abilitiesMobile {
+  @include massAbilitiesAndTypes;
+  left: 680px;
+  @media (max-width: 880px) {
+    left: 480px;
   }
 }
 
-.labelWrap {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.abilities {
-  @include normalText;
-  width: 150px;
-  position: absolute;
-  top: 200px;
-  left: 400px;
-  border-radius: 8px;
-  background-color: $white;
-  text-align: center;
-}
-
 .types {
-  @include normalText;
-  width: 150px;
-  position: absolute;
-  top: 200px;
+  @include massAbilitiesAndTypes;
   left: 580px;
-  border-radius: 8px;
-  background-color: $white;
-  text-align: center;
 }
 
-.colorWrap {
-  @include componentColorCard;
+.typesMobile {
+  @include massAbilitiesAndTypes;
+  left: 280px;
+  @media (max-width: 880px) {
+    left: 180px;
+  }
 }
