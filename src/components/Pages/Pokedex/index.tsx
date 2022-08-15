@@ -1,44 +1,57 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
+
+import s from './Pokedex.module.scss';
+
 import Heading from '../../Heading';
 import PokemonSmallCard from '../../PokemonSmallCard';
 import Error from '../../Error';
 import Loading from '../../Loading';
-import s from './Pokedex.module.scss';
-import useData from '../../../hooks/useData';
-import { ENDPOINT_ENUM } from '../../../types/dataEnum';
-import { IQuery } from '../../../types/dataInterface';
 import PokemonModal from '../../PokemonModal';
+import { CustomPagination } from '../../CustomPagination';
+
+import useData from '../../../hooks/useData';
+import usePagination from '../../../hooks/usePagination';
+
+import { ENDPOINT_ENUM } from '../../../types/dataEnum';
+
 import PokeBallPng from '../../../assets/images/PokeBall.png';
-// import { CustomPagination } from '../../components/CustomPagination';
+import { IData } from '../../../types/dataInterface';
 
 const Pokedex = () => {
-  const [query] = useState<IQuery>({
-    limit: 100,
-  });
+  const [dataLimit, setDataLimit] = useState<number>(10);
+  const [page, setPage] = useState<number>(1);
 
-  // const [currentPage, setCurrentPage] = useState(0);
-  // const [perPage, setPerPage] = useState(10);
+  const { data, isLoading, isError } = useData(
+    ENDPOINT_ENUM.getPokemons,
+    dataLimit,
+  );
+  const { dataPagination } = usePagination(
+    ENDPOINT_ENUM.getPokemons,
+    page,
+    dataLimit,
+  );
+  const [mainData, setMainData] = useState<IData | undefined>(data);
 
-  // const currentPageHandler = useCallback((value: number) => {
-  //   setCurrentPage(value);
-  // }, []);
-
-  // const perPageHandler = useCallback((value: number) => {
-  //   setPerPage(value);
-  // }, []);
-
-  const { data, isLoading, isError } = useData(ENDPOINT_ENUM.getPokemon, query);
-
-  // const totalCount = data?.total || 0;
-  // const totalPages = useMemo(() => Math.ceil(totalCount / perPage), [
-  //   perPage,
-  //   totalCount,
-  // ]);
+  useEffect(() => {
+    if (page === 1) {
+      setMainData(data);
+    } else {
+      setMainData(dataPagination);
+    }
+  }, [page, dataPagination, data]);
 
   if (isError) {
     return <Error />;
   }
+
+  const updateDataLimit = (value: number) => {
+    setDataLimit(value);
+  };
+
+  const updateDataPage = (value: number) => {
+    setPage(value);
+  };
 
   return (
     <>
@@ -53,7 +66,7 @@ const Pokedex = () => {
           <Loading />
         ) : (
           <div className={s.cards}>
-            {data?.results.map((item) => {
+            {mainData?.results.map((item) => {
               return (
                 <Link key={item.name} to={`${item.name}`} className={s.link}>
                   <PokemonSmallCard name={item.name} img={PokeBallPng} />
@@ -64,13 +77,16 @@ const Pokedex = () => {
         )}
       </div>
 
-      {/* <CustomPagination
-        currentPage={currentPage}
-        currentPageHandler={currentPageHandler}
-        totalPages={totalPages}
-        perPage={perPage}
-        perPageHandler={perPageHandler}
-      /> */}
+      <CustomPagination
+        updateDataLimit={updateDataLimit}
+        page={page}
+        updateDataPage={updateDataPage}
+        // currentPage={currentPage}
+        // currentPageHandler={currentPageHandler}
+        // totalPages={totalPages}
+        // perPage={perPage}
+        // perPageHandler={perPageHandler}
+      />
     </>
   );
 };

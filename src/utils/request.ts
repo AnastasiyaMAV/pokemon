@@ -4,16 +4,27 @@ import getUrlWithParamsConfig from './getUrlWithParamsConfig';
 
 async function request(
   endpoint: ENDPOINT_ENUM,
-  query?: object,
+  limit?: number | undefined,
   idName?: string,
+  page?: number,
+  pageSize?: number,
 ) {
-  if (query) {
-    const uri = query && Url.format(getUrlWithParamsConfig(endpoint, query));
+  if (limit) {
+    const uri = Url.format(getUrlWithParamsConfig(endpoint, limit));
     const result = await fetch(uri).then((res) => res.json());
     return result;
   }
   if (idName) {
     const uri = Url.format(getUrlWithParamsConfig(endpoint, null, idName));
+    const result = await fetch(uri).then((res) => res.json());
+    return result;
+  }
+
+  if (page && pageSize) {
+    const uri = Url.format(
+      getUrlWithParamsConfig(endpoint, null, null, page, pageSize),
+    );
+
     const result = await fetch(uri).then((res) => res.json());
     return result;
   }

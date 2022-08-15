@@ -5,8 +5,9 @@ import s from './Button.module.scss';
 interface IBtn {
   children: React.ReactNode;
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  size?: 'wide' | 'default' | 'small';
+  size?: 'wide' | 'default' | 'small' | 'mini';
   color?: 'green' | 'yellow';
+  isDisabled?: boolean;
 }
 
 const Button: React.FC<IBtn> = ({
@@ -14,12 +15,14 @@ const Button: React.FC<IBtn> = ({
   onClick,
   size = 'default',
   color = 'green',
+  isDisabled = false,
 }) => {
   return (
     <button
       type="button"
       className={cn(s.root, s[color], s[size])}
-      onClick={onClick}>
+      onClick={onClick}
+      disabled={isDisabled}>
       {children}
     </button>
   );

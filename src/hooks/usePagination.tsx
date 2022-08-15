@@ -3,8 +3,14 @@ import { ENDPOINT_ENUM } from '../types/dataEnum';
 import { IData } from '../types/dataInterface';
 import request from '../utils/request';
 
-const useData = (endpoint: ENDPOINT_ENUM, limit: number | undefined) => {
-  const [data, setData] = useState<IData | undefined>(undefined);
+const usePagination = (
+  endpoint: ENDPOINT_ENUM,
+  page: number,
+  pageSize: number,
+) => {
+  const [dataPagination, setDatPagination] = useState<IData | undefined>(
+    undefined,
+  );
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
@@ -12,19 +18,25 @@ const useData = (endpoint: ENDPOINT_ENUM, limit: number | undefined) => {
     (async () => {
       setIsLoading(true);
       try {
-        const result = await request(endpoint, limit);
-        setData(result);
+        const result = await request(
+          endpoint,
+          undefined,
+          undefined,
+          page,
+          pageSize,
+        );
+        setDatPagination(result);
       } catch (e) {
         setIsError(true);
       } finally {
         setIsLoading(false);
       }
     })();
-  }, [endpoint, limit]);
+  }, [endpoint, page, pageSize]);
   return {
-    data,
+    dataPagination,
     isLoading,
     isError,
   };
 };
-export default useData;
+export default usePagination;

@@ -2,13 +2,28 @@ import React from 'react';
 import s from './Select.module.scss';
 
 interface ISelect {
-  options: Array<string>;
-  defaultValue: string;
+  options: Array<number>;
+  defaultValue: number;
+  value: number | undefined;
+  onChangeValueSelect: (value: number) => void;
 }
 
-const Select: React.FC<ISelect> = ({ options, defaultValue }) => {
+const Select: React.FC<ISelect> = ({
+  options,
+  defaultValue,
+  value,
+  onChangeValueSelect,
+}) => {
+  const handlerChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    onChangeValueSelect(Number(event.target.value));
+  };
+
   return (
-    <select className={s.select} defaultValue="">
+    <select
+      onChange={handlerChange}
+      className={s.select}
+      defaultValue=""
+      value={value && value}>
       <option value="" disabled hidden>
         {defaultValue}
       </option>

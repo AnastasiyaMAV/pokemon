@@ -20,10 +20,6 @@ export interface IData {
   results: Ipokemons[];
 }
 
-export interface IQuery {
-  limit?: number;
-}
-
 export interface IpokemonsOneAbilitiesAbility {
   name: string;
   url: string;

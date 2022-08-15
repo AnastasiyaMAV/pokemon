@@ -1,0 +1,23 @@
+@import './../../assets/styles/main.scss';
+
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 10px;
+  margin-bottom: 70px;
+}
+
+.textRoot {
+  align-self: center;
+  gap: 10px;
+}
+
+.span {
+  @include btnText;
+}
+
+.btnsGr {
+  display: flex;
+  gap: 10px;
+}
