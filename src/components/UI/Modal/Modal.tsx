@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import s from './Modal.module.scss';
-import iconClose from '../../assets/images/closeIcon.png';
+import iconClose from '../../../assets/images/closeIcon.png';
 
 interface IModal {
   children: React.ReactNode;

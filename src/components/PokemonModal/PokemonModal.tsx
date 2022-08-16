@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import useOnePokemonData from '../../hooks/useOnePokemonData';
 import { ENDPOINT_ENUM } from '../../types/dataEnum';
-import Modal from '../Modal';
+import Modal from '../UI/Modal';
 import PokemonBigCard from '../PokemonBigCard';
 
 const PokemonModal = () => {

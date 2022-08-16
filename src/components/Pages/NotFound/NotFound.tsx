@@ -4,7 +4,8 @@ import s from './NotFound.module.scss';
 import Button from '../../UI/Button';
 import Error404 from '../../../assets/images/404.png';
 import TeamRocket from '../../../assets/images/TeamRocket.png';
-import { LinkEnum } from '../../../utils/const/constVariable';
+
+import { LinkEnum } from '../../../types/dataEnum';
 
 const NotFound = () => {
   const navigate = useNavigate();
@@ -12,6 +13,7 @@ const NotFound = () => {
   const handlerTransition = () => {
     navigate(LinkEnum.HOME);
   };
+
   return (
     <div className={s.root}>
       <div className={s.errorImg}>

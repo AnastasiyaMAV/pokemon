@@ -1,13 +1,10 @@
 /* eslint-disable camelcase */
-export interface IStats {
-  hp: number;
-  attack: number;
-  defense: number;
-  'special-attack': number;
-  'special-defense': number;
-  speed: number;
-}
 
+export interface IMenu {
+  id: number;
+  value: string;
+  link: string;
+}
 export interface Ipokemons {
   name: string;
   url: string[];

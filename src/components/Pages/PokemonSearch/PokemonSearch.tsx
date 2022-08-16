@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import Error from '../../Error';
 import s from './PokemonSearch.module.scss';
-import { ENDPOINT_ENUM } from '../../../types/dataEnum';
-import useOnePokemonData from '../../../hooks/useOnePokemonData';
 import Button from '../../UI/Button';
 import PokemonBigCard from '../../PokemonBigCard';
+
 import PokeBallPng from '../../../assets/images/PokeBall.png';
+
+import useOnePokemonData from '../../../hooks/useOnePokemonData';
+
+import { ENDPOINT_ENUM } from '../../../types/dataEnum';
 
 const PokemonSearch = () => {
   const [searchValue, setSearchValue] = useState('');

@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Empty from './components/Pages/Empty';
-import Home from './components/Pages/Home';
 import NotFound from './components/Pages/NotFound';
+import Home from './components/Pages/Home';
 import Pokedex from './components/Pages/Pokedex';
 import PokemonSearch from './components/Pages/PokemonSearch';
 

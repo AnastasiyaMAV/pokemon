@@ -5,41 +5,7 @@ import { NavLink } from 'react-router-dom';
 import cn from 'classnames';
 import s from './MenuBurger.module.scss';
 
-import { LinkEnum } from '../../utils/const/constVariable';
-
-interface IMenu {
-  id: number;
-  value: string;
-  link: string;
-}
-
-const MENU: IMenu[] = [
-  {
-    id: 1,
-    value: 'Home',
-    link: LinkEnum.HOME,
-  },
-  {
-    id: 2,
-    value: 'Pokédex',
-    link: LinkEnum.POKEDEX,
-  },
-  {
-    id: 3,
-    value: 'Pokemon Search',
-    link: LinkEnum.SEARCH,
-  },
-  {
-    id: 4,
-    value: 'Legendaries',
-    link: LinkEnum.LEGENDARIES,
-  },
-  {
-    id: 5,
-    value: 'Documentation',
-    link: LinkEnum.DOCUMENTATION,
-  },
-];
+import { MENU } from '../../utils/const/constVariable';
 
 const MenuBurger = () => {
   const [menuBox, setMenuBox] = useState(false);
