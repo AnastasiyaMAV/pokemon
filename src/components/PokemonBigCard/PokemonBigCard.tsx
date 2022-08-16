@@ -25,6 +25,8 @@ const PokemonBigCard: React.FC<IPokemonCard> = ({
   img,
   cardColor,
 }) => {
+  console.log(experience === null);
+
   return (
     <>
       <div className={cn(s.root, s[`colorWrap_${cardColor}`])}>
@@ -37,18 +39,24 @@ const PokemonBigCard: React.FC<IPokemonCard> = ({
             {name}
           </Heading>
           <div className={s.statWrap}>
-            <div className={s.statItem}>
-              <div className={s.statValue}>{height}</div>
-              Height
-            </div>
-            <div className={s.statItem}>
-              <div className={s.statValue}>{weight}</div>
-              Weight
-            </div>
-            <div className={s.statItem}>
-              <div className={s.statValue}>{experience}</div>
-              Base experience
-            </div>
+            {height !== null ? (
+              <div className={s.statItem}>
+                <div className={s.statValue}>{height}</div>
+                Height
+              </div>
+            ) : null}
+            {weight !== null ? (
+              <div className={s.statItem}>
+                <div className={s.statValue}>{weight}</div>
+                Weight
+              </div>
+            ) : null}
+            {experience !== null ? (
+              <div className={s.statItem}>
+                <div className={s.statValue}>{experience}</div>
+                Base experience
+              </div>
+            ) : null}
           </div>
         </div>
 
@@ -85,18 +93,26 @@ const PokemonBigCard: React.FC<IPokemonCard> = ({
             {name}
           </Heading>
           <div className={s.statWrap}>
-            <div className={s.statItem}>
-              <div>{height}</div>
-              Height
-            </div>
-            <div className={s.statItem}>
-              <div>{weight}</div>
-              Weight
-            </div>
-            <div className={s.statItem}>
-              <div>{experience}</div>
-              Base experience
-            </div>
+            {height !== null ? (
+              <div className={s.statItem}>
+                <div>{height}</div>
+                Height
+              </div>
+            ) : null}
+
+            {weight !== null ? (
+              <div className={s.statItem}>
+                <div>{weight}</div>
+                Weight
+              </div>
+            ) : null}
+
+            {experience !== null ? (
+              <div className={s.statItem}>
+                <div>{experience}</div>
+                Base experience
+              </div>
+            ) : null}
           </div>
         </div>
 

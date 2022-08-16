@@ -3,7 +3,7 @@
   height: 680px;
   position: relative;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 1240px) {
     display: none;
   }
 }
@@ -41,7 +41,7 @@
 .rootMobile {
   display: none;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 1240px) {
     display: contents;
   }
 }

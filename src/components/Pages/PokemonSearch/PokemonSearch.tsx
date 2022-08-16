@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Error from '../../Error';
 import s from './PokemonSearch.module.scss';
 import Button from '../../UI/Button';
-import PokemonBigCard from '../../PokemonBigCard';
+import PokemonSmallCard from '../../PokemonSmallCard';
 
 import PokeBallPng from '../../../assets/images/PokeBall.png';
 
@@ -58,11 +58,8 @@ const PokemonSearch = () => {
           ) : (
             <div>
               {oneData && (
-                <PokemonBigCard
+                <PokemonSmallCard
                   name={oneData.name}
-                  height={oneData.height}
-                  weight={oneData.weight}
-                  experience={oneData.base_experience}
                   img={oneData.sprites.other.dream_world.front_default}
                 />
               )}

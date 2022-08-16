@@ -111,6 +111,10 @@
   text-decoration: none;
   position: relative;
 
+  @media screen and (max-width: 1240px) {
+    font-size: 20px;
+  }
+
   &:after {
     content: '';
     display: block;

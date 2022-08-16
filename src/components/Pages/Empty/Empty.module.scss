@@ -1,11 +1,5 @@
-.root {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 50px;
+@import '../../../assets/styles/main.scss';
 
-  @media (max-width: 768px) {
-    margin-top: 90px;
-  }
+.root {
+  @include componentCenter;
 }

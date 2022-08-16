@@ -8,6 +8,7 @@
   align-items: center;
   background: $third;
   box-shadow: 0px 4px 16px rgba(1, 28, 64, 0.2);
+
   @media (max-width: 768px) {
     display: none;
   }
@@ -18,7 +19,7 @@
   max-width: 1525px;
   height: 63px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
