@@ -1,6 +1,5 @@
 import React from 'react';
 import s from './PokemonSmallCard.module.scss';
-import Heading from '../UI/Heading';
 import PokeBallPng from '../../assets/images/PokeBall.png';
 
 interface IPokemonCard {
@@ -12,9 +11,7 @@ const PokemonSmallCard: React.FC<IPokemonCard> = ({ name, img }) => {
   return (
     <div className={s.root}>
       <div className={s.infoWrap}>
-        <Heading type="h4" className={s.titleName}>
-          {name}
-        </Heading>
+        <h3 className={s.titleName}>{name}</h3>
       </div>
 
       <div className={s.pictureWrap}>

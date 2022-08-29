@@ -15,6 +15,7 @@ import PokeBallPng from '../../../assets/images/PokeBall.png';
 
 import { ENDPOINT_ENUM } from '../../../types/dataEnum';
 import { IData } from '../../../types/dataInterface';
+import Empty from '../Empty';
 
 const Pokedex = () => {
   const [dataLimit, setDataLimit] = useState<number>(10);
@@ -66,13 +67,17 @@ const Pokedex = () => {
           <Loading />
         ) : (
           <div className={s.cards}>
-            {mainData?.results.map((item) => {
-              return (
-                <Link key={item.name} to={`${item.name}`} className={s.link}>
-                  <PokemonSmallCard name={item.name} img={PokeBallPng} />
-                </Link>
-              );
-            })}
+            {mainData ? (
+              mainData?.results.map((item) => {
+                return (
+                  <Link key={item.name} to={`${item.name}`} className={s.link}>
+                    <PokemonSmallCard name={item.name} img={PokeBallPng} />
+                  </Link>
+                );
+              })
+            ) : (
+              <Empty />
+            )}
           </div>
         )}
       </div>

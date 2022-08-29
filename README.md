@@ -8,9 +8,7 @@
 
 2. <ins>Страница "Pokédex"</ins>.<br>
 
-3. <ins>Страница "Legendaries"</ins>.<br>
-
-4. <ins>Страница "Documentation"</ins>.<br>
+3. <ins>Страница "Pokemon Search"</ins>.<br>
 
 ---
 

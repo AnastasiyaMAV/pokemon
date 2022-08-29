@@ -1,7 +1,7 @@
 @import './../../assets/styles/main.scss';
 
 .root {
-  width: 250px;
+  width: 280px;
   height: 150px;
   box-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
   background: $white1;
@@ -23,11 +23,10 @@
   z-index: 1;
   width: 50px;
   top: 23px;
-  left: 5px;
+  left: 15px;
 }
 
 .titleName {
-  margin-bottom: 12px;
   text-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
   text-decoration: none;
   color: $dark;

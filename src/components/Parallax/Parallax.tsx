@@ -57,7 +57,7 @@ const Parallax = () => {
         <div
           className={s.pikachu}
           style={{
-            transform: `translate(${screenY * 0.05}px, ${screenX * 0.05}px)`,
+            transform: `translate(${screenY * 0.04}px, ${screenX * 0.04}px)`,
           }}>
           <img src={PikachuPng} alt="Cloud PokeBall" />
         </div>

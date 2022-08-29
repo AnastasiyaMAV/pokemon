@@ -18,14 +18,4 @@ export const MENU: IMenu[] = [
     value: 'Pokemon Search',
     link: LinkEnum.SEARCH,
   },
-  {
-    id: 4,
-    value: 'Legendaries',
-    link: LinkEnum.LEGENDARIES,
-  },
-  {
-    id: 5,
-    value: 'Documentation',
-    link: LinkEnum.DOCUMENTATION,
-  },
 ];
