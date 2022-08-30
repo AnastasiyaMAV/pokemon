@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "predeploy": "yarn run build:prod",
-    "deploy": "gh-pages -d build:prod",
+    "deploy": "gh-pages -d build",
     "start": "webpack-dev-server",
     "webpack": "webpack --config webpack.config.js",
     "build:dev": "cross-env NODE_ENV=development webpack --config webpack.config.js",
