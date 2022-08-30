@@ -10,7 +10,7 @@ module.exports = {
   mode: NODE_ENV || 'development',
   entry: path.resolve(__dirname, './src/index.tsx'),
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'build'),
     filename: 'main.js',
   },
   watchOptions: {
@@ -73,7 +73,7 @@ module.exports = {
     port: 3000,
     hot: true,
     open: true,
-    static: './dist',
+    static: './build',
     historyApiFallback: true,
   },
   devtool: 'source-map',
