@@ -1,14 +1,14 @@
 import React from 'react';
 import s from './Select.module.scss';
 
-interface ISelect {
+interface ISelectProps {
   options: Array<number>;
   defaultValue: number;
   value: number | undefined;
   onChangeValueSelect: (value: number) => void;
 }
 
-const Select: React.FC<ISelect> = ({
+const Select: React.FC<ISelectProps> = ({
   options,
   defaultValue,
   value,

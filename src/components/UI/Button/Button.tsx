@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import s from './Button.module.scss';
 
-interface IBtn {
+interface IBtnProps {
   children: React.ReactNode;
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
   size?: 'wide' | 'default' | 'small' | 'mini';
@@ -10,7 +10,7 @@ interface IBtn {
   isDisabled?: boolean;
 }
 
-const Button: React.FC<IBtn> = ({
+const Button: React.FC<IBtnProps> = ({
   children,
   onClick,
   size = 'default',

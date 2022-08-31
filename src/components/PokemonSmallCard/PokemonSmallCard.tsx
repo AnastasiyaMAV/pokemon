@@ -2,12 +2,12 @@ import React from 'react';
 import s from './PokemonSmallCard.module.scss';
 import PokeBallPng from '../../assets/images/PokeBall.png';
 
-interface IPokemonCard {
+interface IPokemonCardProps {
   name: string;
   img: string;
 }
 
-const PokemonSmallCard: React.FC<IPokemonCard> = ({ name, img }) => {
+const PokemonSmallCard: React.FC<IPokemonCardProps> = ({ name, img }) => {
   return (
     <div className={s.root}>
       <div className={s.infoWrap}>

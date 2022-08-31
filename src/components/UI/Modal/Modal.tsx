@@ -4,12 +4,12 @@ import React from 'react';
 import s from './Modal.module.scss';
 import iconClose from '../../../assets/images/closeIcon.png';
 
-interface IModal {
+interface IModalProps {
   children: React.ReactNode;
   onClose: () => void;
 }
 
-const Modal: React.FC<IModal> = ({ children, onClose }) => {
+const Modal: React.FC<IModalProps> = ({ children, onClose }) => {
   return (
     <>
       <div className={s.modal}>

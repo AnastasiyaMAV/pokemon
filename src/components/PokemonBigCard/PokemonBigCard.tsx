@@ -4,7 +4,7 @@ import s from './PokemonBigCard.module.scss';
 import Heading from '../UI/Heading';
 import PokeBallPng from '../../assets/images/PokeBall.png';
 
-interface IPokemonCard {
+interface IPokemonCardProps {
   name: string;
   height: number;
   weight: number;
@@ -15,7 +15,7 @@ interface IPokemonCard {
   cardColor?: string;
 }
 
-const PokemonBigCard: React.FC<IPokemonCard> = ({
+const PokemonBigCard: React.FC<IPokemonCardProps> = ({
   name,
   height,
   weight,
@@ -25,7 +25,31 @@ const PokemonBigCard: React.FC<IPokemonCard> = ({
   img,
   cardColor,
 }) => {
-  console.log(experience === null);
+  const renderStat = (nameState: string, stat: number, mobile: boolean) => {
+    return stat !== null ? (
+      <div className={s.statItem}>
+        <div className={!mobile ? s.statValue : ''}>{stat}</div>
+        {nameState}
+      </div>
+    ) : null;
+  };
+
+  const renderArray = (
+    arrayName: string,
+    array: string[] | undefined,
+    nameClass: string,
+  ) => {
+    return array ? (
+      <div className={nameClass}>
+        {arrayName}
+        <br />
+        {Array.isArray(array) &&
+          array.map((item, index) => {
+            return <span key={item + String(index)}>{item} &#032;</span>;
+          })}
+      </div>
+    ) : null;
+  };
 
   return (
     <>
@@ -39,48 +63,14 @@ const PokemonBigCard: React.FC<IPokemonCard> = ({
             {name}
           </Heading>
           <div className={s.statWrap}>
-            {height !== null ? (
-              <div className={s.statItem}>
-                <div className={s.statValue}>{height}</div>
-                Height
-              </div>
-            ) : null}
-            {weight !== null ? (
-              <div className={s.statItem}>
-                <div className={s.statValue}>{weight}</div>
-                Weight
-              </div>
-            ) : null}
-            {experience !== null ? (
-              <div className={s.statItem}>
-                <div className={s.statValue}>{experience}</div>
-                Base experience
-              </div>
-            ) : null}
+            {renderStat('Height', height, false)}
+            {renderStat('Weight', weight, false)}
+            {renderStat('Base experience', experience, false)}
           </div>
         </div>
 
-        {abilities ? (
-          <div className={s.abilities}>
-            Abilities
-            <br />
-            {Array.isArray(abilities) &&
-              abilities.map((item, index) => {
-                return <span key={item + String(index)}>{item} &#032;</span>;
-              })}
-          </div>
-        ) : null}
-
-        {types ? (
-          <div className={s.types}>
-            Types
-            <br />
-            {Array.isArray(types) &&
-              types.map((item, index) => {
-                return <span key={item + String(index)}>{item} &#032;</span>;
-              })}
-          </div>
-        ) : null}
+        {renderArray('Abilities', abilities, s.abilities)}
+        {renderArray('Types', types, s.types)}
       </div>
 
       <div className={cn(s.rootMobile, s[`colorWrap_${cardColor}`])}>
@@ -93,46 +83,14 @@ const PokemonBigCard: React.FC<IPokemonCard> = ({
             {name}
           </Heading>
           <div className={s.statWrap}>
-            {height !== null ? (
-              <div className={s.statItem}>
-                <div>{height}</div>
-                Height
-              </div>
-            ) : null}
-
-            {weight !== null ? (
-              <div className={s.statItem}>
-                <div>{weight}</div>
-                Weight
-              </div>
-            ) : null}
-
-            {experience !== null ? (
-              <div className={s.statItem}>
-                <div>{experience}</div>
-                Base experience
-              </div>
-            ) : null}
+            {renderStat('Height', height, true)}
+            {renderStat('Weight', weight, true)}
+            {renderStat('Base experience', experience, true)}
           </div>
         </div>
 
-        <div className={s.abilitiesMobile}>
-          Abilities
-          <br />
-          {Array.isArray(abilities) &&
-            abilities.map((item, index) => {
-              return <span key={item + String(index)}>{item} &#032;</span>;
-            })}
-        </div>
-
-        <div className={s.typesMobile}>
-          Types
-          <br />
-          {Array.isArray(types) &&
-            types.map((item, index) => {
-              return <span key={item + String(index)}>{item} &#032;</span>;
-            })}
-        </div>
+        {renderArray('Abilities', abilities, s.abilitiesMobile)}
+        {renderArray('Types', types, s.typesMobile)}
       </div>
     </>
   );
