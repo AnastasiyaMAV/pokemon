@@ -16,6 +16,10 @@
 
 ---
 
+#### Посмотреть приложение:
+
+[Ссылка на приложение](https://anastasiyamav.github.io/pokemon/)
+
 #### Используемые технологии:
 
 - [React](https://ru.reactjs.org/)
