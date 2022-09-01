@@ -2,7 +2,7 @@
   "name": "pokemon",
   "version": "0.1.0",
   "homepage": "https://anastasiyamav.github.io/pokemon/",
-  "private": true,
+  "private": false,
   "license": "MIT",
   "scripts": {
     "predeploy": "yarn run build:prod",

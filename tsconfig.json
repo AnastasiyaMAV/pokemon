@@ -4,6 +4,7 @@
     "jsx": "react",
     "module": "commonjs",
     "allowJs": true,
+    "outDir": "$$ts-jest$$",
     "sourceMap": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
