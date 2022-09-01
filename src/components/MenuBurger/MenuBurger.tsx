@@ -22,7 +22,7 @@ const MenuBurger = () => {
 
   return (
     <div className={s.hamburger}>
-      <input id={s.menuToggle} type="checkbox" checked={menuBox} />
+      <input id={s.menuToggle} type="checkbox" checked={menuBox} readOnly />
       <label
         className={s.menuBtn}
         htmlFor="menuToggle"
