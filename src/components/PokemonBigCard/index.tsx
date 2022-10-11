@@ -1,3 +1,1 @@
-import PokemonBigCard from './PokemonBigCard';
-
-export default PokemonBigCard;
+export * from './PokemonBigCard';

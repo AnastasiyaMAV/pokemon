@@ -1,3 +1,1 @@
-import MenuBurger from './MenuBurger';
-
-export default MenuBurger;
+export * from './MenuBurger';

@@ -8,7 +8,7 @@ interface IHeadingProps {
   className?: string;
 }
 
-const Heading: React.FC<IHeadingProps> = ({
+export const Heading: React.FC<IHeadingProps> = ({
   children,
   type = 'h1',
   className,
@@ -16,5 +16,3 @@ const Heading: React.FC<IHeadingProps> = ({
   const Tag = type as keyof JSX.IntrinsicElements;
   return <Tag className={cn(s[type], className)}> {children}</Tag>;
 };
-
-export default Heading;

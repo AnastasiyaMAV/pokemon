@@ -1,3 +1,1 @@
-import Parallax from './Parallax';
-
-export default Parallax;
+export * from './Parallax';

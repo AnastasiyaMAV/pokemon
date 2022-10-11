@@ -7,7 +7,10 @@ interface IPokemonCardProps {
   img: string;
 }
 
-const PokemonSmallCard: React.FC<IPokemonCardProps> = ({ name, img }) => {
+export const PokemonSmallCard: React.FC<IPokemonCardProps> = ({
+  name,
+  img,
+}) => {
   return (
     <div className={s.root}>
       <div className={s.infoWrap}>
@@ -20,5 +23,3 @@ const PokemonSmallCard: React.FC<IPokemonCardProps> = ({ name, img }) => {
     </div>
   );
 };
-
-export default PokemonSmallCard;

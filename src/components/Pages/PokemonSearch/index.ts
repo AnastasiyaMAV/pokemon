@@ -1,3 +1,1 @@
-import PokemonSearch from './PokemonSearch';
-
-export default PokemonSearch;
+export * from './PokemonSearch';

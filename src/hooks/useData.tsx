@@ -3,7 +3,7 @@ import { ENDPOINT_ENUM } from '../types/dataEnum';
 import { IData } from '../types/dataInterface';
 import request from '../utils/request';
 
-const useData = (endpoint: ENDPOINT_ENUM, limit: number | undefined) => {
+export const useData = (endpoint: ENDPOINT_ENUM, limit: number | undefined) => {
   const [data, setData] = useState<IData | undefined>(undefined);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
@@ -27,4 +27,3 @@ const useData = (endpoint: ENDPOINT_ENUM, limit: number | undefined) => {
     isError,
   };
 };
-export default useData;

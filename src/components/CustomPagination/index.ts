@@ -1,3 +1,5 @@
-import CustomPagination from './CustomPagination';
+// import CustomPagination from './CustomPagination';
 
-export default CustomPagination;
+// export default CustomPagination;
+
+export * from './CustomPagination';

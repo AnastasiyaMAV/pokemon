@@ -10,7 +10,7 @@ interface IBtnProps {
   isDisabled?: boolean;
 }
 
-const Button: React.FC<IBtnProps> = ({
+export const Button: React.FC<IBtnProps> = ({
   children,
   onClick,
   size = 'default',
@@ -27,5 +27,3 @@ const Button: React.FC<IBtnProps> = ({
     </button>
   );
 };
-
-export default Button;

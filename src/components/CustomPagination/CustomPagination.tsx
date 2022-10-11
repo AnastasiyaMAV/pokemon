@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import s from './CustomPagination.module.scss';
-import Select from '../UI/Select';
-import Button from '../UI/Button';
+import { Select } from '../UI/Select';
+import { Button } from '../UI/Button';
 
 interface ICustomPaginationProps {
   updateDataLimit: (value: number) => void;
@@ -108,5 +108,3 @@ export const CustomPagination: React.FC<ICustomPaginationProps> = ({
     </div>
   );
 };
-
-export default CustomPagination;

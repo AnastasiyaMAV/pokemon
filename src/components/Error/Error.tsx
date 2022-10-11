@@ -3,9 +3,9 @@ import React from 'react';
 import s from './Error.module.scss';
 
 import SmallPokeBallPng from '../../assets/images/SmallPokeBall.png';
-import Heading from '../UI/Heading';
+import { Heading } from '../UI/Heading';
 
-const Error = () => {
+export const Error = () => {
   return (
     <div className={s.root}>
       <Heading type="h2">Something wrong! Try a little later.</Heading>
@@ -15,5 +15,3 @@ const Error = () => {
     </div>
   );
 };
-
-export default Error;

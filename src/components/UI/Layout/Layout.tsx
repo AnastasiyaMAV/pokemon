@@ -7,8 +7,7 @@ interface ILayoutProps {
   className?: string | null;
 }
 
-const Layout: React.FC<ILayoutProps> = ({ children, className = null }) => (
-  <div className={cn(s.root, className)}>{children}</div>
-);
-
-export default Layout;
+export const Layout: React.FC<ILayoutProps> = ({
+  children,
+  className = null,
+}) => <div className={cn(s.root, className)}>{children}</div>;

@@ -8,7 +8,7 @@ import PokeBallPng from '../../assets/images/PokeBall.png';
 import CloudBigPng from '../../assets/images/CloudBig.png';
 import PikachuPng from '../../assets/images/Pikachu.png';
 
-const Parallax = () => {
+export const Parallax = () => {
   const [screenX, setScreenX] = useState(0);
   const [screenY, setScreenY] = useState(0);
 
@@ -72,5 +72,3 @@ const Parallax = () => {
     </>
   );
 };
-
-export default Parallax;

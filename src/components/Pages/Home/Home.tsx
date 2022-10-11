@@ -1,14 +1,14 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import s from './Home.module.scss';
-import Button from '../../UI/Button';
-import Heading from '../../UI/Heading';
-import Layout from '../../UI/Layout';
-import Parallax from '../../Parallax';
+import { Button } from '../../UI/Button';
+import { Heading } from '../../UI/Heading';
+import { Layout } from '../../UI/Layout';
+import { Parallax } from '../../Parallax';
 
 import { LinkEnum } from '../../../types/dataEnum';
 
-const Home = () => {
+export const Home = () => {
   const navigate = useNavigate();
 
   const handlerTransition = () => {
@@ -34,5 +34,3 @@ const Home = () => {
     </div>
   );
 };
-
-export default Home;

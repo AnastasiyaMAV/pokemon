@@ -3,9 +3,9 @@ import { Outlet, NavLink } from 'react-router-dom';
 import s from './Header.module.scss';
 import { ReactComponent as PokemonLogo } from '../../assets/images/Logo.svg';
 import { MENU } from '../../utils/const/constVariable';
-import MenuBurger from '../MenuBurger';
+import { MenuBurger } from '../MenuBurger';
 
-const Header = () => {
+export const Header = () => {
   const activeLink = {
     fontWeight: 'bold',
   };
@@ -39,5 +39,3 @@ const Header = () => {
     </>
   );
 };
-
-export default Header;

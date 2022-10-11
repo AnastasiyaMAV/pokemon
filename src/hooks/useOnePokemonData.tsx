@@ -3,7 +3,7 @@ import { ENDPOINT_ENUM } from '../types/dataEnum';
 import { IpokemonsOne } from '../types/dataInterface';
 import request from '../utils/request';
 
-const useOnePokemonData = (
+export const useOnePokemonData = (
   endpoint: ENDPOINT_ENUM,
   idName: string | undefined,
 ) => {
@@ -31,5 +31,3 @@ const useOnePokemonData = (
     isError,
   };
 };
-
-export default useOnePokemonData;

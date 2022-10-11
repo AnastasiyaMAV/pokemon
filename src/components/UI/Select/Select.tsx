@@ -8,7 +8,7 @@ interface ISelectProps {
   onChangeValueSelect: (value: number) => void;
 }
 
-const Select: React.FC<ISelectProps> = ({
+export const Select: React.FC<ISelectProps> = ({
   options,
   defaultValue,
   value,
@@ -37,5 +37,3 @@ const Select: React.FC<ISelectProps> = ({
     </select>
   );
 };
-
-export default Select;

@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './components/Header';
-import NotFound from './components/Pages/NotFound';
-import Home from './components/Pages/Home';
-import Pokedex from './components/Pages/Pokedex';
-import PokemonSearch from './components/Pages/PokemonSearch';
+import { Header } from './components/Header';
+import { NotFound } from './components/Pages/NotFound';
+import { Home } from './components/Pages/Home';
+import { Pokedex } from './components/Pages/Pokedex';
+import { PokemonSearch } from './components/Pages/PokemonSearch';
 
-const App = () => {
+export const App = () => {
   return (
     <Router>
       <Header />
@@ -20,5 +20,3 @@ const App = () => {
     </Router>
   );
 };
-
-export default App;

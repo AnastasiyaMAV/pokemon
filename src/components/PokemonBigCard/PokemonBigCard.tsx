@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import s from './PokemonBigCard.module.scss';
-import Heading from '../UI/Heading';
+import { Heading } from '../UI/Heading';
 import PokeBallPng from '../../assets/images/PokeBall.png';
 
 interface IPokemonCardProps {
@@ -15,7 +15,7 @@ interface IPokemonCardProps {
   cardColor?: string;
 }
 
-const PokemonBigCard: React.FC<IPokemonCardProps> = ({
+export const PokemonBigCard: React.FC<IPokemonCardProps> = ({
   name,
   height,
   weight,
@@ -95,5 +95,3 @@ const PokemonBigCard: React.FC<IPokemonCardProps> = ({
     </>
   );
 };
-
-export default PokemonBigCard;

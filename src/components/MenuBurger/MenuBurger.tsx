@@ -7,7 +7,7 @@ import s from './MenuBurger.module.scss';
 
 import { MENU } from '../../utils/const/constVariable';
 
-const MenuBurger = () => {
+export const MenuBurger = () => {
   const [menuBox, setMenuBox] = useState(false);
   const activeLink = {
     fontWeight: 'bold',
@@ -48,5 +48,3 @@ const MenuBurger = () => {
     </div>
   );
 };
-
-export default MenuBurger;

@@ -9,7 +9,7 @@ interface IModalProps {
   onClose: () => void;
 }
 
-const Modal: React.FC<IModalProps> = ({ children, onClose }) => {
+export const Modal: React.FC<IModalProps> = ({ children, onClose }) => {
   useEffect(() => {
     const handleClose = (event: any) => {
       if (event.key === 'Escape' || event.isTrusted === true) {
@@ -34,5 +34,3 @@ const Modal: React.FC<IModalProps> = ({ children, onClose }) => {
     </>
   );
 };
-
-export default Modal;

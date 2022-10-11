@@ -1,3 +1,1 @@
-import PokemonModal from './PokemonModal';
-
-export default PokemonModal;
+export * from './PokemonModal';

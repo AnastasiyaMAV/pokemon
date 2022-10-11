@@ -2,9 +2,9 @@ import React from 'react';
 import s from './Empty.module.scss';
 
 import EmptyPikachu from '../../../assets/images/EmptyPikachu.png';
-import Layout from '../../UI/Layout';
+import { Layout } from '../../UI/Layout';
 
-const Empty = () => {
+export const Empty = () => {
   return (
     <Layout>
       <div className={s.root}>
@@ -16,5 +16,3 @@ const Empty = () => {
     </Layout>
   );
 };
-
-export default Empty;

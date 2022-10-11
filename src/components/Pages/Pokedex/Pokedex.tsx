@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 import s from './Pokedex.module.scss';
-import Heading from '../../UI/Heading';
-import PokemonSmallCard from '../../PokemonSmallCard';
-import Error from '../../Error';
-import Loading from '../../Loading';
-import PokemonModal from '../../PokemonModal';
-import CustomPagination from '../../CustomPagination';
+import { Heading } from '../../UI/Heading';
+import { PokemonSmallCard } from '../../PokemonSmallCard';
+import { Error } from '../../Error';
+import { Loading } from '../../Loading';
+import { PokemonModal } from '../../PokemonModal';
+import { CustomPagination } from '../../CustomPagination';
 
-import useData from '../../../hooks/useData';
-import usePagination from '../../../hooks/usePagination';
+import { useData } from '../../../hooks/useData';
+import { usePagination } from '../../../hooks/usePagination';
 
 import PokeBallPng from '../../../assets/images/PokeBall.png';
 
 import { ENDPOINT_ENUM } from '../../../types/dataEnum';
 import { IData } from '../../../types/dataInterface';
-import Empty from '../Empty';
+import { Empty } from '../Empty';
 
-const Pokedex = () => {
+export const Pokedex = () => {
   const [dataLimit, setDataLimit] = useState<number>(10);
   const [page, setPage] = useState<number>(1);
 
@@ -90,5 +90,3 @@ const Pokedex = () => {
     </>
   );
 };
-
-export default Pokedex;

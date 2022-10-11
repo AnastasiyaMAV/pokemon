@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import Error from '../../Error';
+import { Error } from '../../Error';
 import s from './PokemonSearch.module.scss';
-import Button from '../../UI/Button';
-import PokemonSmallCard from '../../PokemonSmallCard';
+import { Button } from '../../UI/Button';
+import { PokemonSmallCard } from '../../PokemonSmallCard';
 
 import PokeBallPng from '../../../assets/images/PokeBall.png';
 
-import useOnePokemonData from '../../../hooks/useOnePokemonData';
+import { useOnePokemonData } from '../../../hooks/useOnePokemonData';
 
 import { ENDPOINT_ENUM } from '../../../types/dataEnum';
 
-const PokemonSearch = () => {
+export const PokemonSearch = () => {
   const [searchValue, setSearchValue] = useState('');
 
   const [onePokemon, setOnePokemon] = useState<string>();
@@ -70,5 +70,3 @@ const PokemonSearch = () => {
     </>
   );
 };
-
-export default PokemonSearch;

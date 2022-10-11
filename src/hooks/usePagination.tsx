@@ -3,7 +3,7 @@ import { ENDPOINT_ENUM } from '../types/dataEnum';
 import { IData } from '../types/dataInterface';
 import request from '../utils/request';
 
-const usePagination = (
+export const usePagination = (
   endpoint: ENDPOINT_ENUM,
   page: number,
   pageSize: number,
@@ -39,4 +39,3 @@ const usePagination = (
     isError,
   };
 };
-export default usePagination;

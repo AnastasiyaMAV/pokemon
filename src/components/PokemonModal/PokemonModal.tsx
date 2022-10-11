@@ -1,11 +1,11 @@
 import React, { useCallback } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import useOnePokemonData from '../../hooks/useOnePokemonData';
+import { useOnePokemonData } from '../../hooks/useOnePokemonData';
 import { ENDPOINT_ENUM } from '../../types/dataEnum';
-import Modal from '../UI/Modal';
-import PokemonBigCard from '../PokemonBigCard';
+import { Modal } from '../UI/Modal';
+import { PokemonBigCard } from '../PokemonBigCard';
 
-const PokemonModal = () => {
+export const PokemonModal = () => {
   const { pokemonId } = useParams();
 
   const { oneData } = useOnePokemonData(ENDPOINT_ENUM.getOnePokemon, pokemonId);
@@ -43,5 +43,3 @@ const PokemonModal = () => {
     </Modal>
   );
 };
-
-export default PokemonModal;

@@ -36,6 +36,7 @@ module.exports = {
         jsx: 'never',
       },
     ],
+    'import/prefer-default-export': 'off',
   },
   settings: {
     'import/resolver': {

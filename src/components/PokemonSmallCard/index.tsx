@@ -1,3 +1,1 @@
-import PokemonSmallCard from './PokemonSmallCard';
-
-export default PokemonSmallCard;
+export * from './PokemonSmallCard';
