@@ -24,7 +24,7 @@ export const Select: React.FC<ISelectProps> = ({
       className={s.select}
       defaultValue=""
       value={value && value}>
-      <option value="" disabled hidden>
+      <option value="" disabled hidden className={s.select}>
         {defaultValue}
       </option>
       {options.map((item, index) => {

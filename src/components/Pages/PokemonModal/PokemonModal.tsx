@@ -1,9 +1,11 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useOnePokemonData } from '../../hooks/useOnePokemonData';
-import { ENDPOINT_ENUM } from '../../types/dataEnum';
-import { Modal } from '../UI/Modal';
+import { useOnePokemonData } from '../../../hooks/useOnePokemonData';
+import { ENDPOINT_ENUM } from '../../../types/dataEnum';
+import { Modal } from '../../UI/Modal';
+import s from './PokemonModal.module.scss';
 import { PokemonBigCard } from '../PokemonBigCard';
+import PokeBallPng from '../../../assets/images/PokeBall.png';
 
 export const PokemonModal = () => {
   const { pokemonId } = useParams();
@@ -22,13 +24,13 @@ export const PokemonModal = () => {
 
   const navigate = useNavigate();
 
-  const handleClose = useCallback(() => {
-    navigate('../');
-  }, [navigate]);
+  const handleClose = () => {
+    navigate('../pokedex');
+  };
 
   return (
     <Modal onClose={handleClose}>
-      {oneData && (
+      {oneData ? (
         <PokemonBigCard
           name={oneData.name}
           height={oneData.height}
@@ -39,6 +41,8 @@ export const PokemonModal = () => {
           img={oneData.sprites.other.dream_world.front_default}
           cardColor={masTypes[0]}
         />
+      ) : (
+        <img className={s.pokeBall} src={PokeBallPng} alt="PokeBallPng" />
       )}
     </Modal>
   );

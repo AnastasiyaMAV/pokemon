@@ -5,7 +5,7 @@ import s from './Button.module.scss';
 interface IBtnProps {
   children: React.ReactNode;
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  size?: 'wide' | 'default' | 'small' | 'mini';
+  size?: 'wide' | 'default' | 'small' | 'mini' | 'micro';
   color?: 'green' | 'yellow';
   isDisabled?: boolean;
 }

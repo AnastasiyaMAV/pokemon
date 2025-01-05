@@ -10,8 +10,8 @@ export const MENU: IMenu[] = [
   },
   {
     id: 2,
-    value: 'Pokédex',
-    link: LinkEnum.POKEDEX,
+    value: 'Pokédex Cards',
+    link: LinkEnum.POKEDEX_CARDS,
   },
   {
     id: 3,

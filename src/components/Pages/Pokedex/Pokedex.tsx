@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
 import s from './Pokedex.module.scss';
 import { Heading } from '../../UI/Heading';
 import { PokemonSmallCard } from '../../PokemonSmallCard';
 import { Error } from '../../Error';
 import { Loading } from '../../Loading';
-import { PokemonModal } from '../../PokemonModal';
 import { CustomPagination } from '../../CustomPagination';
 
 import { useData } from '../../../hooks/useData';
@@ -56,30 +54,26 @@ export const Pokedex = () => {
 
   return (
     <>
-      <Routes>
-        <Route path="/:pokemonId" element={<PokemonModal />} />
-      </Routes>
       <div className={s.root}>
         <Heading type="h3" className={s.heading}>
           {data && data.count} Pokemons for you to choose your favorite
         </Heading>
-        {isLoading ? (
+        {isLoading && !mainData ? (
           <Loading />
         ) : (
           <div className={s.cards}>
-            {mainData ? (
-              mainData?.results.map((item) => {
-                return (
-                  <Link key={item.name} to={`${item.name}`} className={s.link}>
-                    <PokemonSmallCard name={item.name} img={PokeBallPng} />
-                  </Link>
-                );
-              })
-            ) : (
-              <Empty />
-            )}
+            {mainData?.results.map((item) => {
+              return (
+                <PokemonSmallCard
+                  key={item.name}
+                  name={item.name}
+                  img={PokeBallPng}
+                />
+              );
+            })}
           </div>
         )}
+        {!mainData && isLoading && <Empty />}
       </div>
 
       <CustomPagination

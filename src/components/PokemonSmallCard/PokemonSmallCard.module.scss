@@ -9,7 +9,6 @@
   overflow: hidden;
   position: relative;
   margin-bottom: 45px;
-  cursor: pointer;
   transition: all ease-in-out 0.15s;
 
   &:hover {
@@ -22,8 +21,7 @@
   position: absolute;
   z-index: 1;
   width: 50px;
-  top: 23px;
-  left: 15px;
+  margin-left: 10px;
 }
 
 .titleName {
@@ -46,4 +44,13 @@
   img {
     width: 60%;
   }
+}
+
+.link {
+  color: $water1;
+}
+
+.img {
+  width: 15px;
+  height: 15px;
 }

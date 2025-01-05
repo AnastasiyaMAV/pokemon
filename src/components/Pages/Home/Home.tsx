@@ -12,7 +12,7 @@ export const Home = () => {
   const navigate = useNavigate();
 
   const handlerTransition = () => {
-    navigate(LinkEnum.POKEDEX);
+    navigate(LinkEnum.POKEDEX_CARDS);
   };
 
   return (

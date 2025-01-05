@@ -34,11 +34,6 @@
 ```
 git clone https://github.com/AnastasiyaMAV/pokemon.git
 cd pokemon
-npm install
-npm start
-
- or
-
 yarn install
 yarn start
 ```

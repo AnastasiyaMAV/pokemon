@@ -6,7 +6,7 @@ export enum ENDPOINT_ENUM {
 }
 
 export enum LinkEnum {
-  HOME = '/',
-  POKEDEX = '/pokedex',
+  HOME = '/pokemon',
+  POKEDEX_CARDS = '/pokedex',
   SEARCH = '/search',
 }

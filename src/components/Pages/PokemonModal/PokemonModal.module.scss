@@ -1,0 +1,8 @@
+.pokeBall {
+  position: absolute;
+  transform: translateX(160%) translateY(80%);
+
+  @media screen and (max-width: 1250px) {
+    display: none;
+  }
+}

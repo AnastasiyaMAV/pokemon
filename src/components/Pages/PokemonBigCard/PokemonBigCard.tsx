@@ -1,8 +1,8 @@
 import React from 'react';
 import cn from 'classnames';
 import s from './PokemonBigCard.module.scss';
-import { Heading } from '../UI/Heading';
-import PokeBallPng from '../../assets/images/PokeBall.png';
+import { Heading } from '../../UI/Heading';
+import PokeBallPng from '../../../assets/images/PokeBall.png';
 
 interface IPokemonCardProps {
   name: string;
@@ -57,7 +57,6 @@ export const PokemonBigCard: React.FC<IPokemonCardProps> = ({
         <div className={s.pictureWrap}>
           <img src={img || PokeBallPng} alt={name} />
         </div>
-
         <div className={s.infoWrap}>
           <Heading type="h3" className={s.titleName}>
             {name}
